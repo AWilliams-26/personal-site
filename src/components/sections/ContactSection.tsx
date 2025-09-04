@@ -10,10 +10,10 @@ export function ContactSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Let's Connect
+              Let&apos;s Connect
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Ready to collaborate or discuss opportunities? I'd love to hear from you.
+              Ready to collaborate or discuss opportunities? I&apos;d love to hear from you.
           </p>
         </div>
 
