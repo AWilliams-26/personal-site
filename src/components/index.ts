@@ -1,0 +1,9 @@
+// Component exports for cleaner imports
+export { Navigation } from './Navigation';
+export { ThemeProvider } from './theme/ThemeProvider';
+export { ThemeToggle } from './theme/ThemeToggle';
+export { HeroSection } from './sections/HeroSection';
+export { ExperienceSection } from './sections/ExperienceSection';
+export { SkillsSection } from './sections/SkillsSection';
+export { ProjectsSection } from './sections/ProjectsSection';
+export { ContactSection } from './sections/ContactSection';
