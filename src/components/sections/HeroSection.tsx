@@ -1,9 +1,12 @@
 'use client';
 
-import Image from 'next/image';
-import { siteConfig } from '@/data/siteConfig';
+import { PersonalInfo } from '@/types';
 
-export function HeroSection() {
+interface HeroSectionProps {
+  personalInfo: PersonalInfo;
+}
+
+export function HeroSection({ personalInfo }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
       {/* Background gradient */}
@@ -11,42 +14,38 @@ export function HeroSection() {
       
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Profile Image */}
-        <div className="mb-8 relative">
-          <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
-            <Image
-              src="/You are winner.png"
-              alt={siteConfig.personalInfo.name}
-              width={160}
-              height={160}
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
-          <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white dark:border-gray-800"></div>
+        {/* Animated greeting */}
+        <div className="mb-4 animate-fade-in-up">
+          <p className="text-lg font-medium text-purple-600 dark:text-purple-400">
+            Hello, I'm
+          </p>
         </div>
 
-        {/* Name and Title */}
-        <div className="mb-6">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">
-            {siteConfig.personalInfo.name}
+        {/* Name with gradient */}
+        <div className="mb-6 animate-fade-in-up">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-gray-900 via-purple-800 to-gray-800 dark:from-white dark:via-purple-200 dark:to-gray-100 bg-clip-text text-transparent leading-tight">
+            {personalInfo.name}
           </h1>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 font-medium">
-            {siteConfig.personalInfo.title}
+        </div>
+
+        {/* Title */}
+        <div className="mb-6 animate-fade-in-up">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-semibold">
+            {personalInfo.title}
           </h2>
         </div>
 
-        {/* Tagline */}
-        <div className="mb-8">
-          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            {siteConfig.personalInfo.tagline}
+        {/* Tagline with emphasis */}
+        <div className="mb-12 animate-fade-in-up">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            {personalInfo.tagline}
           </p>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href={`mailto:${siteConfig.personalInfo.email}`}
+            href={`mailto:${personalInfo.email}`}
             className="
               px-8 py-4 bg-purple-600 hover:bg-purple-700 
               text-white font-semibold rounded-full

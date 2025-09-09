@@ -4,17 +4,18 @@ import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { siteConfig } from "@/data/siteConfig";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Navigation />
       <main>
-        <HeroSection />
-        <ExperienceSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
+        <HeroSection personalInfo={siteConfig.personalInfo} />
+        <ExperienceSection experiences={siteConfig.experiences} />
+        <SkillsSection skills={siteConfig.skills} />
+        <ProjectsSection projects={siteConfig.projects} />
+        <ContactSection personalInfo={siteConfig.personalInfo} />
       </main>
       
       {/* Footer */}

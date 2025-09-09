@@ -1,6 +1,5 @@
 'use client';
 
-import { siteConfig } from '@/data/siteConfig';
 import { Experience } from '@/types';
 
 interface ExperienceCardProps {
@@ -72,8 +71,11 @@ function ExperienceCard({ experience, index }: ExperienceCardProps) {
   );
 }
 
-export function ExperienceSection() {
-  const experiences = siteConfig.experiences;
+interface ExperienceSectionProps {
+  experiences: Experience[];
+}
+
+export function ExperienceSection({ experiences }: ExperienceSectionProps) {
 
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">

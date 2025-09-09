@@ -1,9 +1,13 @@
 'use client';
 
-import { siteConfig } from '@/data/siteConfig';
+import { PersonalInfo } from '@/types';
 import { Mail, MapPin, Phone } from 'lucide-react';
 
-export function ContactSection() {
+interface ContactSectionProps {
+  personalInfo: PersonalInfo;
+}
+
+export function ContactSection({ personalInfo }: ContactSectionProps) {
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -21,7 +25,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Email */}
           <a
-            href={`mailto:${siteConfig.personalInfo.email}`}
+            href={`mailto:${personalInfo.email}`}
             className="
               group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700
               hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out
@@ -34,7 +38,7 @@ export function ContactSection() {
             </div>
             <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Email</h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm break-all">
-              {siteConfig.personalInfo.email}
+              {personalInfo.email}
             </p>
           </a>
 
@@ -48,13 +52,13 @@ export function ContactSection() {
             </div>
             <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Location</h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              {siteConfig.personalInfo.location}
+              {personalInfo.location}
             </p>
           </div>
 
           {/* Phone */}
           <a
-            href={`tel:${siteConfig.personalInfo.phone}`}
+            href={`tel:${personalInfo.phone}`}
             className="
               group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700
               hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out
@@ -67,7 +71,7 @@ export function ContactSection() {
             </div>
             <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Phone</h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              {siteConfig.personalInfo.phone}
+              {personalInfo.phone}
             </p>
           </a>
         </div>
@@ -75,7 +79,7 @@ export function ContactSection() {
         {/* CTA */}
         <div className="text-center">
           <a
-            href={`mailto:${siteConfig.personalInfo.email}?subject=Hello Alexander!&body=Hi Alexander,%0D%0A%0D%0AI'd like to discuss...`}
+            href={`mailto:${personalInfo.email}?subject=Hello Alexander!&body=Hi Alexander,%0D%0A%0D%0AI'd like to discuss...`}
             className="
               inline-flex items-center px-8 py-4 bg-purple-600 hover:bg-purple-700 
               text-white font-semibold rounded-full

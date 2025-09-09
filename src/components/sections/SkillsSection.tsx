@@ -1,6 +1,5 @@
 'use client';
 
-import { siteConfig } from '@/data/siteConfig';
 import { Skill } from '@/types';
 
 interface SkillCardProps {
@@ -73,10 +72,15 @@ function SkillCategory({ title, skills, icon }: SkillCategoryProps) {
   );
 }
 
-export function SkillsSection() {
-  const technicalSkills = siteConfig.skills.filter(skill => skill.category === 'technical');
-  const languageSkills = siteConfig.skills.filter(skill => skill.category === 'language');
-  const creativeSkills = siteConfig.skills.filter(skill => skill.category === 'creative');
+interface SkillsSectionProps {
+  skills: Skill[];
+}
+
+export function SkillsSection({ skills }: SkillsSectionProps) {
+  const technicalSkills = skills.filter(skill => skill.category === 'technical');
+  const languageSkills = skills.filter(skill => skill.category === 'language');
+  const creativeSkills = skills.filter(skill => skill.category === 'creative');
+  const softSkills = skills.filter(skill => skill.category === 'soft');
 
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
@@ -107,6 +111,11 @@ export function SkillsSection() {
             title="Creative Skills" 
             skills={creativeSkills} 
             icon="🎵" 
+          />
+          <SkillCategory 
+            title="Soft Skills" 
+            skills={softSkills} 
+            icon="🤝" 
           />
         </div>
       </div>

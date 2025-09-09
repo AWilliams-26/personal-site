@@ -1,6 +1,5 @@
 'use client';
 
-import { siteConfig } from '@/data/siteConfig';
 import { Project } from '@/types';
 
 interface ProjectCardProps {
@@ -69,8 +68,11 @@ function ProjectCard({ project }: ProjectCardProps) {
   );
 }
 
-export function ProjectsSection() {
-  const projects = siteConfig.projects;
+interface ProjectsSectionProps {
+  projects: Project[];
+}
+
+export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">

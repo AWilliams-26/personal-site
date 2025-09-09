@@ -22,8 +22,8 @@ export interface Experience {
 
 export interface Skill {
   name: string;
-  category: 'technical' | 'language' | 'creative';
-  proficiency?: 'beginner' | 'intermediate' | 'advanced';
+  category: 'technical' | 'language' | 'creative' | 'soft';
+  proficiency?: 'beginner' | 'intermediate' | 'advanced' | 'native';
 }
 
 export interface Project {
@@ -32,7 +32,7 @@ export interface Project {
   description: string;
   technologies: string[];
   year: string;
-  type: 'academic' | 'internship' | 'personal';
+  type: 'academic' | 'internship' | 'personal' | 'professional';
 }
 
 export interface SiteConfig {
