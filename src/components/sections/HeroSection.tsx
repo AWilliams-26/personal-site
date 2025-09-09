@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { PersonalInfo } from '@/types';
 
 interface HeroSectionProps {
@@ -14,6 +15,20 @@ export function HeroSection({ personalInfo }: HeroSectionProps) {
       
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
+        {/* Winner Trophy Image */}
+        <div className="mb-8 animate-fade-in-up">
+          <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-4">
+            <Image
+              src="/You are winner.png"
+              alt="Winner Trophy - You're Winner!"
+              width={160}
+              height={160}
+              className="w-full h-full object-contain drop-shadow-2xl hover:scale-110 transition-transform duration-300"
+              priority
+            />
+          </div>
+        </div>
+
         {/* Animated greeting */}
         <div className="mb-4 animate-fade-in-up">
           <p className="text-lg font-medium text-purple-600 dark:text-purple-400">
