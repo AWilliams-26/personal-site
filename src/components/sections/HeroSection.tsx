@@ -32,7 +32,7 @@ export function HeroSection({ personalInfo }: HeroSectionProps) {
         {/* Animated greeting */}
         <div className="mb-4 animate-fade-in-up">
           <p className="text-lg font-medium text-purple-600 dark:text-purple-400">
-            Hello, I'm
+            Hello, I&apos;m
           </p>
         </div>
 
